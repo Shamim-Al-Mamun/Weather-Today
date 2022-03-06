@@ -1,0 +1,230 @@
+/* Variables*/
+:root {
+  /* primary/main color */
+  --clr-grey-1: hsla(0, 0%, 50%, 0.6);
+  --clr-grey-2: hsla(0, 0%, 50%, 0.5);
+  --clr-grey-3: hsla(0, 0%, 100%, 0.2);
+  --clr-wht-smoke:hsl(0, 0%, 96%);
+  /* secondary color*/
+  --clr-grey-4: hsla(0, 0%, 50%, 0.7);
+  --clr-grey-5:hsla(0, 0%, 50%, 0.9);
+  --clr-grey-6: hsl(209, 28%, 39%);
+  --clr-grey-7: hsl(209, 34%, 30%);
+  --clr-grey-8: hsl(211, 39%, 23%);
+  --clr-grey-9: hsl(210, 40%, 2%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-yellow-deep:hsl(60, 100%, 50%);
+  --clr-black: #222;
+  --light-shadow:rgba(50, 50, 70, 0.5);
+  --dark-shadow:rgba(50, 50, 70, 0.9);
+  --box-shadow:rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --max-width: 1170px;
+  --min-width:350px;
+  --fixed-width: 460px;
+}
+
+/*Global Styles*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  transition: 0.4 ease;
+}
+main {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/* section */
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+
+}
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+.cold{
+  background-image: url('./assets/cold-bg.jpg');
+  background-size: cover;
+  transition: 0.8s all;
+}
+.warm{
+  background-image: url('./assets/warm-bg.jpg');
+  background-size: cover;
+  transition: 0.8s all;
+}
+.bg-none{
+  background-image: none;
+  background-color: var(--clr-grey-5);
+  transition: 0.4 ease;
+}
+.container {
+  width: 90vw;
+  min-width: var(--min-width);
+  margin: 5rem 0;
+  height: 95vh;
+  max-width: var(--fixed-width);
+  background-color:var(--clr-grey-1);
+  z-index: 1;
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  position: relative;
+}
+.container h3 {
+  text-transform: none;
+  margin-bottom: 2rem;
+  color: var(--clr-white);
+  font-weight:bold;
+}
+input{
+  padding: .8rem;
+  width: 100%;
+  border-radius: .5rem;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+ 
+  background-color: var(--clr-wht-smoke);
+  box-shadow: 0 0 5px var(--box-shadow);
+  color: #313131;
+  font-size: 1rem;
+  border: 1.5px solid var(--clr-grey-2);
+}
+input[type=text]:focus, input:focus {
+  background-color:  var(--clr-white);
+}
+.error{
+  font-size: 1.5rem;
+  color: var(--clr-red-dark);
+  font-weight: 500;
+  padding: .5rem;
+  text-align: center;
+}
+.location {
+  color: #FFF;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px var(--light-shadow);
+}
+.date {
+  color: #FFF;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px var(--box);
+  margin: .5rem;
+}
+.temp {
+  width: 70%;
+  margin: 10% auto;
+  /* background-color: var(--clr-grey-2); */
+  background-color: var(--clr-grey-3);
+  border-radius: 1.5rem;
+  padding: 1rem 1.5rem;
+  color: #FFF;
+  font-size: 5rem;
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 3px 6px var(--light-shadow);
+  box-shadow: 0 0  5px var(--box-shadow);
+}
+.weather {
+  color: #FFF;
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 3px 3px var(--dark-shadow);
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  border: none;
+  background-color: rgb(41, 38, 38, .2);
+  padding: 8px;
+  color: rgb(255, 255, 255, .9);
+  margin: 2px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+  position: absolute;
+  bottom: 1%;
+  right:1%;
+}
+a:hover{
+  background-color: rgb(41, 38, 38, .3);
+}
